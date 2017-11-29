@@ -50,10 +50,10 @@ import 'prismjs/components/prism-markup';
 export class AppModule { }
 ```
 
-and in your SCSS:
+and in your style file:
 
 ```scss
-@import '~prismjs/themes/prism'
+@import '~prismjs/themes/prism';
 ```
 
 Once your library is imported, you can use its components, directives and pipes in your Angular application:
