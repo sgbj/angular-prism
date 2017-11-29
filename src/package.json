@@ -1,0 +1,29 @@
+{
+  "name": "@sgbj/angular-prism",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sgbj/angular-prism"
+  },
+  "author": {
+    "name": "sgbj",
+    "email": "scott@batary.io"
+  },
+  "keywords": [
+    "angular", "prismjs", "prism", "code", "syntax", "highlighter"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sgbj/angular-prism/issues"
+  },
+  "main": "angular-prism.umd.js",
+  "module": "angular-prism.js",
+  "jsnext:main": "angular-prism.js",
+  "typings": "angular-prism.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4",
+    "prismjs": "^1.8.4"
+  }
+}
