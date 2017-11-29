@@ -1,4 +1,4 @@
-# @sgbj/angular-prism
+# [@sgbj/angular-prism](https://www.npmjs.com/package/@sgbj/angular-prism)
 
 Use the Prism syntax highlighter in your Angular applications.
 
@@ -69,6 +69,8 @@ or
 <!-- You can now use your library component in app.component.html -->
 <prism language="typescript" [code]="code"></prism>
 ```
+
+[View demo.](https://stackblitz.com/edit/angular-p5pqex)
 
 ## Development
 
