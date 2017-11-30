@@ -1,4 +1,4 @@
-# @sgbj/angular-prism
+# [@sgbj/angular-prism](https://www.npmjs.com/package/@sgbj/angular-prism)
 
 Use the Prism syntax highlighter in your Angular applications.
 
@@ -50,10 +50,10 @@ import 'prismjs/components/prism-markup';
 export class AppModule { }
 ```
 
-and in your SCSS:
+and in your style file:
 
 ```scss
-@import '~prismjs/themes/prism'
+@import '~prismjs/themes/prism';
 ```
 
 Once your library is imported, you can use its components, directives and pipes in your Angular application:
@@ -69,6 +69,8 @@ or
 <!-- You can now use your library component in app.component.html -->
 <prism language="typescript" [code]="code"></prism>
 ```
+
+[View demo.](https://stackblitz.com/edit/angular-p5pqex)
 
 ## Development
 
