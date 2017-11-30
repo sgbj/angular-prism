@@ -1,6 +1,6 @@
 declare var Prism: any;
 
-import { Component, AfterViewInit, Input, ElementRef, ViewChild, AfterContentInit, OnDestroy } from '@angular/core';
+import { Component, AfterViewInit, Input, ElementRef, ViewChild, AfterContentInit, OnDestroy, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'prism',
@@ -9,7 +9,7 @@ import { Component, AfterViewInit, Input, ElementRef, ViewChild, AfterContentIni
     <pre class="language-{{language}}"><code #code></code></pre>
   `
 })
-export class PrismComponent implements AfterViewInit {
+export class PrismComponent implements AfterViewInit, AfterContentInit, OnChanges {
   private observer: MutationObserver | null;
 
   @Input() language: string;
@@ -20,11 +20,16 @@ export class PrismComponent implements AfterViewInit {
   constructor(private elementRef: ElementRef) { }
 
   onContentChanged() {
-    this.codeViewChild.nativeElement.innerHTML = this.code ? this.code : this.rawViewChild.nativeElement.innerHTML;
+    this.codeViewChild.nativeElement.innerHTML = this.code ? 
+      this.encodeEntities(this.code) : this.rawViewChild.nativeElement.innerHTML;
     Prism.highlightElement(this.codeViewChild.nativeElement);
   }
 
   ngAfterViewInit() {
+    this.onContentChanged();
+  }
+
+  ngOnChanges() {
     this.onContentChanged();
   }
 
@@ -36,10 +41,19 @@ export class PrismComponent implements AfterViewInit {
       'subtree': true
     });
   }
-
+  
   ngOnDestroy() {
     if (this.observer) {
       this.observer.disconnect();
     }
+  }
+
+  encodeEntities(value) {
+    return value
+      .replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
   }
 }
