@@ -6,7 +6,7 @@ import { Component, AfterViewInit, Input, ElementRef, ViewChild, AfterContentIni
   selector: 'prism',
   template: `
     <div hidden #raw style="display: none"><ng-content></ng-content></div>
-    <pre class="language-{{language}}"><code #code></code></pre>
+    <pre><code class="language-{{language}}" #code></code></pre>
   `
 })
 export class PrismComponent implements AfterViewInit, AfterContentInit, OnChanges {
