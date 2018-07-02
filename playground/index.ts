@@ -11,7 +11,7 @@ import { NgModule } from '@angular/core';
 import { Component } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { PrismModule }  from 'angular-prism';
+import { PrismModule } from '@sgbj/angular-prism';
 
 @Component({
   selector: 'app',
